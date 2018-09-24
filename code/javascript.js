@@ -4,44 +4,46 @@ console.log(response)
 return response.json()
 }).then((data) => {
 
-
-console.log(data.weather[0].main)
-console.log(data.main.temp)
-console.log(data.name)
-
-// shows city
+// Shows the name of the city
 const nameOfCity = data.name
 
-// temperature in stockholm rounded to one decimal
-const stockholmTemp = data.main.temp
-const stockholmTempRounded = Math.round(stockholmTemp * 10) / 10;
+// temperature in city rounded to one decimal
+const cityTemp = data.main.temp
+const TempRounded = Math.round(cityTemp * 10) / 10;
 
 //background color depending on temperature
-if (stockholmTemp > 10) {
-document.getElementById("container").style.background = "yellow"
-}else if (stockholmTemp < 10){
-  document.getElementById("container").style.background = "blue"
+if (cityTemp > 10) {
+  document.getElementById("container").style.background = "#FCFF33"
+}else if (cityTemp < 10){
+  document.getElementById("container").style.background = "#33F6FF"
+}else {
+  document.getElementById("container").style.background = "#ADB2BB"
 }
 
-
-// shows todays weather
+// shows weather
 const weatherToday =  data.weather[0].main
 
 
+// icon images
+const imgSun = document.createElement("img")
+imgSun.src =  "Images/icon.png";
+const imgRain = document.createElement("img")
+imgRain.src =  "Images/rain.png";
+const imgCloud = document.createElement("img")
+imgCloud.src =  "Images/cloud.png";
 
-// weather icon shows when Clear
-const imgSun = document.createElement("img") // namn i div
-imgSun.src =  "icon.png"
-
-   if (weatherToday === "Clear"){
+// Icon shows and change depending on the weather
+   if (weatherToday === "Clear") {
      document.getElementById("img").appendChild(imgSun)
-   }
-
+  } else if (weatherToday === "Rain") {
+     document.getElementById("img").appendChild(imgRain)
+  } else {
+    document.getElementById("img").appendChild(imgCloud)
+  }
 
 document.getElementById("city").innerHTML = nameOfCity
-document.getElementById("temperature").innerHTML = stockholmTempRounded
+document.getElementById("temperature").innerHTML = TempRounded + " °C"
 document.getElementById("weather").innerHTML = weatherToday
-
 
 
 })
