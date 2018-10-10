@@ -1,8 +1,8 @@
 fetch("http://api.openweathermap.org/data/2.5/weather?q=Stockholm,Sweden&units=metric&APPID=9c85576a645c250809de8ffb8202fcd6")
-.then((response) => {
-console.log(response)
-return response.json()
-}).then((data) => {
+  .then((response) => {
+  console.log(response)
+  return response.json()
+  }).then((data) => {
 
 // Shows the name of the city
 const nameOfCity = data.name
@@ -13,9 +13,9 @@ const TempRounded = Math.round(cityTemp * 10) / 10;
 
 //background color depending on temperature
 if (cityTemp > 10) {
-  document.getElementById("container").style.background = "#FCFF33"
+  document.getElementById("container").style.background = "#F9FBB2"
 }else if (cityTemp < 10){
-  document.getElementById("container").style.background = "#33F6FF"
+  document.getElementById("container").style.background = "#BEE7E8"
 }else {
   document.getElementById("container").style.background = "#ADB2BB"
 }
