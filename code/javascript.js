@@ -1,6 +1,5 @@
 fetch("http://api.openweathermap.org/data/2.5/weather?q=Stockholm,Sweden&units=metric&APPID=9c85576a645c250809de8ffb8202fcd6")
   .then((response) => {
-  console.log(response)
   return response.json()
   }).then((data) => {
 
