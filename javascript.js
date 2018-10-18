@@ -25,11 +25,11 @@ const weatherToday =  data.weather[0].main
 
 // icon images
 const imgSun = document.createElement("img")
-imgSun.src =  "Images/icon.png";
+imgSun.src =  "./Images/icon.png";
 const imgRain = document.createElement("img")
-imgRain.src =  "Images/rain.png";
+imgRain.src =  "./Images/rain.png";
 const imgCloud = document.createElement("img")
-imgCloud.src =  "Images/cloud.png";
+imgCloud.src =  "./Images/cloud.png";
 
 // Icon shows and change depending on the weather
    if (weatherToday === "Clear") {
