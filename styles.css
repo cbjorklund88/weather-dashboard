@@ -23,3 +23,26 @@ h1 {
   height: auto;
   width: 100%;
 }
+@media (min-width: 600px) and (max-width: 900px){
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    height: 900px;
+      }
+    #container {
+      margin:0;
+    }
+  }
+
+@media (max-width: 600px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    height: 400px;
+    }
+    #container {
+      margin:0;
+    }
+}

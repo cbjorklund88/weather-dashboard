@@ -34,7 +34,7 @@ imgCloud.src =  "./Images/cloud.png";
 // Icon shows and change depending on the weather
    if (weatherToday === "Clear") {
      document.getElementById("img").appendChild(imgSun)
-  } else if (weatherToday === "Rain") {
+  } else if (weatherToday === "Rain" && "Drizzle") {
      document.getElementById("img").appendChild(imgRain)
   } else {
     document.getElementById("img").appendChild(imgCloud)
